@@ -152,6 +152,7 @@ var fnCounter = function(anonymousFunction, N){
 
 //Next Problem
 
+/*
 var someFunction = function(num){
   return function(){
     return num;
@@ -159,6 +160,17 @@ var someFunction = function(num){
 }
 
 var funcArray = [someFunction(0), someFunction(1), someFunction(2), someFunction(3), someFunction(4), someFunction(5)];
+*/
+
+var funcArray = [];
+
+for (var i = 0; i < 6; i++){
+  (function(x){
+    funcArray.push(function(){
+    return x;
+    })
+  })(i);
+}
 
 /*
   Make the following code work
